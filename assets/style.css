@@ -67,21 +67,26 @@ input[type='submit']{
 }
 input[type='submit']:hover{
 	background: blue;
-
 }
 table{
-	border: 12px solid black;
-}
-th,td{
+	margin: 10px 0 100px;
 	border-collapse: collapse;
-	width: 30%;
+	width: 80%;
 }
-
-
-
-
-
-
+th{
+	padding: 10px;
+	border-bottom: 2px solid grey;
+	border-left: 2px solid lightgreen;	
+	border-right: 2px solid lightgreen;
+	background-color: lightgreen;
+}
+td {
+	border: 1px solid lightgreen;
+	padding: 10px;
+}
+tr:hover {
+	background-color: lightgrey;
+}
 .error {
 	color: red;
 }

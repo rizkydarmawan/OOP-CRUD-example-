@@ -61,9 +61,9 @@ class Database
 
     }
 
-    public function delete($table, $id)
+    public function delete($table, $field, $id)
     {
-        $query = "DELETE FROM $table WHERE id = $id";
+        $query = "DELETE FROM $table WHERE $field = $id";
         return $this->mysqli->query($query);
     }
 	

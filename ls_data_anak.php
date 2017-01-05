@@ -10,14 +10,25 @@ require 'template/header.php';
 		<th> Nama </th>
 		<th> Alamat </th>
 		<th> No kesukaan </th>
+		<th> Action </th>
 	</thead>
 	<tbody>
+	<?php
+	$no = 1;
+	$anaks = $anak->show_all_data('tbl_anak');
+	foreach ($anaks as $anak) {
+	?>
 		<tr>
-			<td> 1 </td>
-			<td> Udin </td>
-			<td> Celsea </td>
-			<td> 112 </td>
+			<td> <?= $no++ ?> </td>
+			<td> <?= $anak['nama'] ?> </td>
+			<td> <?= $anak['alamat'] ?> </td>
+			<td> <?= $anak['no'] ?> </td>
+			<td>
+				<a href="edit_anak.php?id=<?= $anak['id'] ?>"> Edit </a> ||
+				<a href="delete.php?id=<?= $anak['id']?>&token=<?= Token::generate()?>"> Hapus </a>
+			</td>
 		</tr>
+	<?php } ?>
 	</tbody>
 </table>
 
